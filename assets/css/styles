@@ -1,0 +1,107 @@
+/* Ogbomoso North Local Government - main stylesheet
+   Sections: 1 tokens, 2 base, 3 header, 4 layout, 5 components, 6 forms, 7 footer, 8 responsive */
+/* 1. Tokens */
+:root{--green:#008751;--dark:#00472b;--tint:#e8f3ec;--ink:#1b1f1d;--muted:#505a55;--line:#d5dbd7;--grey:#f3f5f4;--gold:#c79a00;--max:1240px}
+/* 2. Base */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Source Sans 3',Arial,sans-serif;font-size:1rem;line-height:1.6;color:var(--ink);background:#fff}
+h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;line-height:1.2;margin:0 0 .5rem}
+h1{font-size:clamp(1.9rem,4vw,2.7rem)}h2{font-size:clamp(1.5rem,2.6vw,1.9rem)}h3{font-size:1.2rem}
+p{margin:0 0 1rem}a{color:var(--dark)}img,iframe{max-width:100%}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:.5rem 1rem;z-index:100}.skip:focus{left:0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* 3. Header */
+.gov-bar{background:var(--grey);border-bottom:1px solid var(--line);font-size:.85rem}
+.gov-bar .wrap{display:flex;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;padding-top:.4rem;padding-bottom:.4rem}
+.gov-bar p{margin:0;display:flex;align-items:center;gap:.5rem}.gov-bar strong{letter-spacing:.03em;text-transform:uppercase}
+.flag{width:24px;height:16px;border:1px solid #8a9a92;background:linear-gradient(90deg,#008751 33.3%,#fff 33.3% 66.6%,#008751 66.6%)}
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1rem;padding-bottom:1rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--ink)}
+.brand-mark{width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font:700 1rem 'Source Serif 4',serif}
+.brand-text strong{display:block;font:700 1.25rem 'Source Serif 4',serif;line-height:1.1}.brand-text small{color:var(--muted)}
+.search{position:relative;display:flex}
+.search input{height:44px;min-width:240px;border:1px solid #6f7f77;border-right:0;padding:0 .75rem;font-size:1rem;font-family:inherit}
+.search button{height:44px;padding:0 1.1rem;background:var(--green);color:#fff;border:0;font:600 1rem 'Source Sans 3',sans-serif;cursor:pointer}
+.results{position:absolute;top:100%;left:0;right:0;z-index:50;margin:0;padding:0;list-style:none;background:#fff;border:1px solid var(--line);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.results a{display:block;padding:.6rem .75rem;text-decoration:none}.results a:hover{background:var(--tint)}.results li+li{border-top:1px solid var(--line)}
+.nav-toggle{display:none;height:44px;padding:0 1rem;background:#fff;border:2px solid var(--dark);color:var(--dark);font:600 1rem 'Source Sans 3',sans-serif;cursor:pointer}
+.main-nav{background:var(--dark)}
+.main-nav ul{display:flex;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.main-nav a{display:block;padding:.85rem .9rem;color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;border-bottom:4px solid transparent}
+.main-nav a:hover{background:var(--green)}.main-nav a[aria-current="page"]{border-bottom-color:#fff;background:var(--green)}
+.main-nav .cta{margin-left:auto}.main-nav .cta a{background:#fff;color:var(--dark)}.main-nav .cta a:hover{background:var(--tint)}
+/* 4. Layout */
+.page-head{background:var(--grey);border-bottom:1px solid var(--line);padding:1.5rem 0 1.75rem}
+.crumbs{font-size:.9rem;color:var(--muted);margin-bottom:.75rem}.crumbs a{color:var(--muted)}
+.lead{font-size:1.15rem;max-width:48rem;margin:.5rem 0 0}
+.block{padding:2.5rem 0;border-bottom:1px solid var(--line)}.block.alt{background:var(--grey)}
+.intro{color:var(--muted);max-width:48rem;margin-bottom:1.25rem}
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.split{display:grid;gap:1.5rem;grid-template-columns:1.2fr 1fr;align-items:start}
+.hero{background:var(--dark);color:#fff;padding:3.5rem 0}
+.hero h1{color:#fff;max-width:46rem}.hero p{font-size:1.2rem;max-width:40rem;color:#dcebe3}
+.eyebrow{display:block;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:#f2d36b;font-weight:600;margin-bottom:.5rem}
+.actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}
+/* 5. Components */
+.card{border:1px solid var(--line);background:#fff;padding:1.25rem}.card p{color:var(--muted);margin-bottom:.75rem}
+.more{font-weight:600}
+.btn{display:inline-block;background:var(--green);color:#fff;border:2px solid var(--green);padding:.65rem 1.25rem;min-height:44px;font:600 1rem 'Source Sans 3',sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--dark);border-color:var(--dark)}
+.btn.outline{background:transparent;color:var(--dark);border-color:var(--dark)}.btn.outline:hover{background:var(--tint)}
+.hero .btn.outline{color:#fff;border-color:#fff}.hero .btn.outline:hover{background:rgba(255,255,255,.12)}
+.services{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.services a{display:block;padding:1rem;border:1px solid var(--line);border-left:4px solid var(--gold);background:#fff;font-weight:600;text-decoration:none}.services a:hover{background:var(--tint)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.steps li{counter-increment:s;position:relative;border:1px solid var(--line);background:#fff;padding:1rem 1rem 1rem 3.4rem}
+.steps li::before{content:counter(s);position:absolute;left:1rem;top:1rem;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:700}
+.steps strong{display:block}.steps span{color:var(--muted)}
+.facts{display:grid;grid-template-columns:11rem 1fr;gap:.6rem 1rem;margin:0}.facts dt{font-weight:600}.facts dd{margin:0;color:var(--muted)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);background:#fff}
+table{border-collapse:collapse;width:100%;min-width:480px}
+th{background:var(--grey);text-align:left;padding:.65rem .8rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+td{padding:.7rem .8rem;border-top:1px solid var(--line);vertical-align:top}
+.empty{margin:0;padding:1rem;color:var(--muted)}
+.note{border-left:4px solid var(--green);background:var(--tint);padding:.9rem 1.1rem;margin:1.25rem 0}
+details{border:1px solid var(--line);background:#fff;padding:.8rem 1rem;margin-bottom:.6rem}summary{font-weight:600;cursor:pointer}details p{margin:.6rem 0 0;color:var(--muted)}
+.checks{margin:0;padding-left:1.2rem}.checks li{margin-bottom:.4rem}
+.map{border:1px solid var(--line);width:100%;height:340px}
+.contact-band{background:var(--dark);color:#fff;padding:2rem 0}.contact-band h2{color:#fff}.contact-band p{color:#dcebe3}
+.contact-band .btn{background:#fff;color:var(--dark);border-color:#fff}.contact-band .btn.outline{background:transparent;color:#fff}
+/* 6. Forms */
+.form{border:1px solid var(--line);background:#fff;padding:1.25rem}
+.field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}.field label{font-weight:600}
+.field input,.field select,.field textarea{min-height:44px;border:1px solid #6f7f77;padding:.5rem .75rem;font-size:1rem;font-family:inherit;background:#fff;border-radius:2px}
+.field textarea{min-height:110px;resize:vertical}.field small{color:var(--muted)}
+.form-row{display:grid;gap:0 1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+/* 7. Footer */
+.site-footer{background:var(--dark);color:#e4efe8;padding:2.5rem 0 1.25rem}
+.site-footer h2{color:#fff;font-size:1.1rem}.site-footer a{color:#e4efe8}.site-footer ul{list-style:none;margin:0;padding:0}.site-footer li{margin-bottom:.35rem}
+.footer-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.legal{border-top:1px solid #2b6b4d;margin-top:1.5rem;padding-top:1rem;font-size:.85rem}
+/* 8. Responsive */
+@media(max-width:960px){
+.nav-toggle{display:inline-block}
+.main-nav{display:none}.main-nav.open{display:block}
+.main-nav ul{flex-direction:column}.main-nav .cta{margin-left:0}
+.search{width:100%}.search input{flex:1;min-width:0}
+.split{grid-template-columns:1fr}
+.facts{grid-template-columns:1fr}.facts dt{margin-top:.5rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.gov-bar,.main-nav,.search,.nav-toggle,.contact-band{display:none}}
+/* 9. Language toggle, ownership notice, reporting channels */
+html:not([data-lang="yo"]) [data-l="yo"],html[data-lang="yo"] [data-l="en"]{display:none}
+[hidden]{display:none!important}
+.lang{display:inline-flex;gap:2px;margin-left:.75rem}
+.lang button{font:600 .85rem 'Source Sans 3',sans-serif;padding:.3rem .7rem;min-height:32px;border:1px solid var(--dark);background:#fff;color:var(--dark);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--dark);color:#fff}
+.notice{background:#fff4c2;border-bottom:1px solid #d9bd4a;font-size:.9rem;padding:.4rem 0;color:#4a3b00}
+.ways{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));margin-bottom:1.5rem}
+.way{display:block;padding:1.1rem 1.25rem;border:1px solid var(--line);border-top:5px solid var(--gold);background:#fff;color:var(--ink);text-decoration:none}
+.way strong{display:block;font:700 1.15rem 'Source Serif 4',serif;color:var(--dark);margin-bottom:.25rem}.way span{color:var(--muted)}
+.way.wa{border-top-color:var(--green)}a.way:hover{background:var(--tint)}
+.form .actions .btn{margin:0}
